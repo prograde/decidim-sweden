@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/codegram/decidim-deploy-heroku.git
-  revision: 129b23c17e7d65f301381c0c2ccba3c551612095
-  specs:
-    decidim-deploy-heroku (0.0.1)
-      decidim (~> 0.1)
-
-GIT
   remote: https://github.com/digidemlab/decidim.git
   revision: 6457a79c2407ae4537a3eaa02adb0db18fbe37bc
   specs:
@@ -667,7 +660,6 @@ DEPENDENCIES
   byebug (~> 10.0)
   dalli
   decidim!
-  decidim-deploy-heroku!
   decidim-dev (= 0.11.0.pre)
   faker (~> 1.8)
   fog-aws
