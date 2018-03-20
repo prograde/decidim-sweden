@@ -6,6 +6,8 @@ ruby RUBY_VERSION
 
 gem "decidim", git: "https://github.com/digidemlab/decidim.git"
 
+gem "decidim-deploy-heroku", git: "https://github.com/codegram/decidim-deploy-heroku.git"
+
 gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
 
@@ -23,4 +25,15 @@ group :development do
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 3.5"
+end
+
+group :production do
+  gem 'passenger'
+  gem 'fog-aws'
+  gem 'dalli'
+  gem 'sendgrid-ruby'
+  gem 'newrelic_rpm'
+  gem 'lograge'
+  gem 'sentry-raven'
+  gem 'sidekiq'
 end
