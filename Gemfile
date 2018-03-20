@@ -6,7 +6,7 @@ ruby RUBY_VERSION
 
 gem "decidim", git: "https://github.com/digidemlab/decidim.git"
 
-gem "decidim-deploy-heroku", git: "https://github.com/codegram/decidim-deploy-heroku.git"
+#gem "decidim-deploy-heroku", git: "https://github.com/codegram/decidim-deploy-heroku.git"
 
 gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
