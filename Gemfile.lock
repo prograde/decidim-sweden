@@ -660,7 +660,7 @@ DEPENDENCIES
   byebug (~> 10.0)
   dalli
   decidim!
-  decidim-dev (= 0.11.0.pre)
+  decidim-dev!
   faker (~> 1.8)
   fog-aws
   letter_opener_web (~> 1.3)
