@@ -6,8 +6,6 @@ ruby RUBY_VERSION
 
 gem "decidim", git: "https://github.com/digidemlab/decidim.git"
 
-#gem "decidim-deploy-heroku", git: "https://github.com/codegram/decidim-deploy-heroku.git"
-
 gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
 
@@ -16,7 +14,7 @@ gem "faker", "~> 1.8"
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
-  gem "decidim-dev", "0.11.0.pre"
+  gem "decidim-dev", git: "https://github.com/digidemlab/decidim.git"
 end
 
 group :development do
