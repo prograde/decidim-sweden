@@ -6,6 +6,11 @@ ruby RUBY_VERSION
 
 gem "decidim", git: "https://github.com/decidim/decidim.git"
 
+#gem "decidim-generators", git: "https://github.com/decidim/decidim-generators.git"
+#gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-export.git"
+#gem 'decidim-personal_number', git: "https://github.com/PierreMesure/decidim-module-personal_number.git"
+#gem "decidim-test", path: "../decidim-module-test"
+
 gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
 
