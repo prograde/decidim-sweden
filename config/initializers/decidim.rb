@@ -5,8 +5,8 @@ Decidim.configure do |config|
   config.mailer_sender = "donotreply@digidemlab.org"
 
   # Change these lines to set your preferred locales
-  config.default_locale = :en
-  config.available_locales = [:en, :sv]
+  config.default_locale = :sv
+  config.available_locales = [:sv, :en, :fi, :fr, :es, :de]
 
   # Geocoder configuration
   # config.geocoder = {
