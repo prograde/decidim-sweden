@@ -4,12 +4,11 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/decidim/decidim.git"
+gem "decidim", "0.16.0"
+# gem "decidim-consultations", "0.16.0"
+# gem "decidim-initiatives", "0.16.0"
 
-#gem "decidim-generators", git: "https://github.com/decidim/decidim-generators.git"
-#gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-export.git"
-#gem 'decidim-personal_number', git: "https://github.com/PierreMesure/decidim-module-personal_number.git"
-#gem "decidim-test", path: "../decidim-module-test"
+gem "bootsnap", "~> 1.3"
 
 gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
@@ -19,7 +18,7 @@ gem "faker", "~> 1.9"
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/decidim/decidim.git"
+  gem "decidim-dev", "0.16.0"
 end
 
 group :development do
@@ -28,15 +27,4 @@ group :development do
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 3.5"
-end
-
-group :production do
-  gem 'passenger'
-  gem 'fog-aws'
-  gem 'dalli'
-  gem 'sendgrid-ruby'
-  gem 'newrelic_rpm'
-  gem 'lograge'
-  gem 'sentry-raven'
-  gem 'sidekiq'
 end
