@@ -33,8 +33,4 @@ group :production do
   gem "passenger"
   gem "sidekiq"
   gem "fog-aws"
-  gem "newrelic_rpm"
-  gem "dalli"
-  gem "sentry-raven"
-  gem "scout_apm"
 end
