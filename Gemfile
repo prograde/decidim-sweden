@@ -28,3 +28,13 @@ group :development do
   gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 3.5"
 end
+
+group :production do
+  gem "passenger"
+  gem "sidekiq"
+  gem "fog-aws"
+  gem "newrelic_rpm"
+  gem "dalli"
+  gem "sentry-raven"
+  gem "scout_apm"
+end
