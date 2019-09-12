@@ -7,8 +7,6 @@ ruby RUBY_VERSION
 DECIDIM_VERSION = "0.18.0"
 
 gem "decidim", DECIDIM_VERSION
-gem "decidim-consultations", DECIDIM_VERSION
-gem "decidim-initiatives", DECIDIM_VERSION
 
 gem "bootsnap", "~> 1.3"
 
@@ -18,6 +16,8 @@ gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 1.9"
+
+gem "figaro"
 
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
@@ -34,6 +34,7 @@ group :development do
 end
 
 group :production do
+  gem "passenger"
   gem "sidekiq"
-  gem "fog-aws"
+  gem "decidim-antivirus"
 end
