@@ -35,3 +35,6 @@ public/uploads
 
 # Figaro application.yml
 /config/application.yml
+
+# Remain of Ansible install script
+create-decidim-admin.done
