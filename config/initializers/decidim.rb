@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "Decidim Sweden"
-  config.mailer_sender = "donotreply@digidemlab.org"
+  config.application_name = Rails.application.secrets.geocoder[:application_name]
+  config.mailer_sender = Rails.application.secrets.geocoder[:mailer_sender]
 
   # Change these lines to set your preferred locales
   config.default_locale = :sv
