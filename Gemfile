@@ -38,5 +38,6 @@ end
 group :production do
   gem "passenger"
   gem "sidekiq"
+  gem "sinatra"
   gem "decidim-antivirus"
 end
