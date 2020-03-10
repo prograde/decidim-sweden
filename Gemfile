@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.18.0"
+DECIDIM_VERSION = "0.20.0"
 
 gem "decidim", DECIDIM_VERSION
 
@@ -22,7 +22,7 @@ gem "figaro"
 gem "sentry-raven"
 
 group :development, :test do
-  gem "byebug", "~> 10.0", platform: :mri
+  gem "byebug", "~> 11.0", platform: :mri
 
   gem "decidim-dev", DECIDIM_VERSION
 end
@@ -39,5 +39,5 @@ group :production do
   gem "passenger"
   gem "sidekiq"
   gem "sinatra"
-  gem "decidim-antivirus"
+  #gem "decidim-antivirus"
 end
