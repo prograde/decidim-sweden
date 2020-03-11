@@ -5,20 +5,20 @@
 // Import Stockholm font files here. For licencing reasons font files are not publicly shared.
 @font-face{
   font-family: 'Stockholm Type';
-    src: url('https://font.stockholm.se/fonts/stockholm-type/StockholmType-Bold.eot');
-    src: url('https://font.stockholm.se/fonts/stockholm-type/StockholmType-Bold.eot?#iefix') format('embedded-opentype'),
-         url('https://font.stockholm.se/fonts/stockholm-type/StockholmType-Bold.woff') format('woff'),
-         url('https://font.stockholm.se/fonts/stockholm-type/StockholmType-Bold.ttf') format('truetype');
+    src: url('StockholmType-Bold.eot');
+    src: url('StockholmType-Bold.eot?#iefix') format('embedded-opentype'),
+         url('StockholmType-Bold.woff') format('woff'),
+         url('StockholmType-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face{
   font-family: 'Stockholm Type';
-    src: url('https://font.stockholm.se/fonts/stockholm-type/StockholmType-Regular.eot');
-    src: url('https://font.stockholm.se/fonts/stockholm-type/StockholmType-Regular.eot?#iefix') format('embedded-opentype'),
-         url('https://font.stockholm.se/fonts/stockholm-type/StockholmType-Regular.woff') format('woff'),
-         url('https://font.stockholm.se/fonts/stockholm-type/StockholmType-Regular.ttf') format('truetype');
+    src: url('StockholmType-Regular.eot');
+    src: url('StockholmType-Regular.eot?#iefix') format('embedded-opentype'),
+         url('StockholmType-Regular.woff') format('woff'),
+         url('StockholmType-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
