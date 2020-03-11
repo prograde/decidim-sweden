@@ -8,6 +8,8 @@ DECIDIM_VERSION = "0.20.0"
 
 gem "decidim", DECIDIM_VERSION
 
+gem 'decidim-initiatives', DECIDIM_VERSION
+
 gem "bootsnap", "~> 1.3"
 
 gem "wicked_pdf"
