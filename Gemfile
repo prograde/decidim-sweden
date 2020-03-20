@@ -8,7 +8,10 @@ DECIDIM_VERSION = "0.20.0"
 
 gem "decidim", DECIDIM_VERSION
 
-gem 'decidim-initiatives', DECIDIM_VERSION
+#gem 'decidim-initiatives', DECIDIM_VERSION
+
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer"
+#gem 'decidim-navbar_links', git: "https://github.com/OpenSourcePolitics/decidim-module-navbar_links"
 
 gem "bootsnap", "~> 1.3"
 
@@ -41,5 +44,5 @@ group :production do
   gem "passenger"
   gem "sidekiq"
   gem "sinatra"
-  #gem "decidim-antivirus"
+  gem "decidim-antivirus", git: "https://github.com/mainio/decidim-module-antivirus"
 end
