@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/mainio/decidim-module-access_requests
+  revision: be77d15a1836a008f09797a6a9da0d11064fec60
+  specs:
+    decidim-access_requests (0.20.0)
+      decidim-admin (~> 0.20.0)
+      decidim-core (~> 0.20.0)
+      decidim-verifications (~> 0.20.0)
+
+GIT
   remote: https://github.com/mainio/decidim-module-antivirus
   revision: c652373d59b4aed8dc372b482cacbe770ecd8035
   specs:
@@ -778,6 +787,7 @@ DEPENDENCIES
   bootsnap (~> 1.3)
   byebug (~> 11.0)
   decidim (= 0.20.0)
+  decidim-access_requests!
   decidim-antivirus!
   decidim-dev (= 0.20.0)
   decidim-term_customizer!
