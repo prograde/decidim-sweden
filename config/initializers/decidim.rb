@@ -1,18 +1,17 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = Rails.application.secrets.geocoder[:application_name]
-  config.mailer_sender = Rails.application.secrets.geocoder[:mailer_sender]
+  config.application_name = Rails.application.secrets.application_name
+  config.mailer_sender = Rails.application.secrets.mailer_sender
 
   # Change these lines to set your preferred locales
   config.default_locale = :sv
-  config.available_locales = [:sv, :en]
+  config.available_locales = %i[sv en]
 
   # Geocoder configuration
   config.geocoder = {
-   static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
-   here_app_id: Rails.application.secrets.geocoder[:here_app_id],
-   here_app_code: Rails.application.secrets.geocoder[:here_app_code]
+    static_map_url: 'https://image.maps.cit.api.here.com/mia/1.6/mapview',
+    here_api_key: Rails.application.secrets.geocoder[:here_api_key]
   }
 
   # Custom resource reference generator method
@@ -22,7 +21,7 @@ Decidim.configure do |config|
   # end
 
   # Currency unit
-  config.currency_unit = "kr"
+  config.currency_unit = 'kr'
 
   # The number of reports which an object can receive before hiding it
   # config.max_reports_before_hiding = 3
