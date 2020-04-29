@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/digidemlab/decidim
-  revision: ae59f6441ed7ed01f50e947443db230fb5c32d63
-  branch: l10n_release/0.21.0
+  remote: https://github.com/decidim/decidim
+  revision: e8cf77fc2862d1cd79a60e22ff22c02e112a1b63
+  branch: 0.21-stable
   specs:
     decidim (0.21.0)
       decidim-accountability (= 0.21.0)
@@ -805,7 +805,7 @@ DEPENDENCIES
   byebug (~> 11.0)
   decidim!
   decidim-antivirus!
-  decidim-dev (= 0.21.0)
+  decidim-dev!
   decidim-navbar_links!
   decidim-term_customizer!
   faker (~> 1.9)
