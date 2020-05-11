@@ -44,6 +44,7 @@ end
 group :production do
   gem "passenger"
   gem "sidekiq"
+  gem "sidekiq-scheduler"
   gem "sinatra"
   gem "decidim-antivirus", git: "https://github.com/digidemlab/decidim-module-antivirus"
   gem 'piwik_analytics', git: "https://github.com/halfdan/piwik-ruby-tracking.git"
