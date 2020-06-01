@@ -218,13 +218,6 @@ GIT
       decidim-core (>= 0.20.0)
 
 GIT
-  remote: https://github.com/digidemlab/decidim-module-online-meetings
-  revision: 14a62b6695d7e159da85d9824bebb38a577dbd99
-  specs:
-    decidim-jitsi_meetings (0.21.0)
-      decidim-core (= 0.21.0)
-
-GIT
   remote: https://github.com/digidemlab/decidim-module-socio_demographic_authorization_handler
   revision: 0cef9818d91b5612efff18af856250f5502fefe6
   branch: just-age-and-gender
@@ -843,7 +836,6 @@ DEPENDENCIES
   decidim-antivirus!
   decidim-consultations (= 0.21.0)
   decidim-dev!
-  decidim-jitsi_meetings!
   decidim-navbar_links!
   decidim-socio_demographic_authorization_handler!
   decidim-term_customizer!
