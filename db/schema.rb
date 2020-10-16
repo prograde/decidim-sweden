@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_113019) do
+ActiveRecord::Schema.define(version: 2020_10_16_160755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -33,11 +33,32 @@ ActiveRecord::Schema.define(version: 2020_10_15_113019) do
     t.integer "children_count", default: 0
     t.float "weight", default: 1.0
     t.string "external_id"
+    t.string "main_image"
+    t.string "list_image"
+    t.string "theme_color"
+    t.boolean "use_default_details", default: true
     t.index ["decidim_accountability_status_id"], name: "decidim_accountability_results_on_status_id"
     t.index ["decidim_component_id"], name: "index_decidim_accountability_results_on_decidim_component_id"
     t.index ["decidim_scope_id"], name: "index_decidim_accountability_results_on_decidim_scope_id"
     t.index ["external_id"], name: "index_decidim_accountability_results_on_external_id"
     t.index ["parent_id"], name: "decidim_accountability_results_on_parent_id"
+  end
+
+  create_table "decidim_accountability_simple_result_detail_values", force: :cascade do |t|
+    t.bigint "decidim_accountability_result_detail_id"
+    t.bigint "decidim_accountability_result_id"
+    t.jsonb "description"
+    t.index ["decidim_accountability_result_detail_id"], name: "index_accountability_result_common_detail_values_on_detail_id"
+    t.index ["decidim_accountability_result_id"], name: "index_accountability_result_cmn_detail_values_on_results_id"
+  end
+
+  create_table "decidim_accountability_simple_result_details", force: :cascade do |t|
+    t.bigint "accountability_result_detailable_id"
+    t.integer "position"
+    t.string "icon"
+    t.jsonb "title"
+    t.string "accountability_result_detailable_type"
+    t.index ["accountability_result_detailable_id", "accountability_result_detailable_type"], name: "index_decidim_accountability_simple_result_dets_on_detailable"
   end
 
   create_table "decidim_accountability_statuses", id: :serial, force: :cascade do |t|
@@ -57,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_10_15_113019) do
     t.integer "decidim_accountability_result_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "title"
     t.index ["decidim_accountability_result_id"], name: "index_decidim_accountability_timeline_entries_on_results_id"
     t.index ["entry_date"], name: "index_decidim_accountability_timeline_entries_on_entry_date"
   end
@@ -334,6 +356,9 @@ ActiveRecord::Schema.define(version: 2020_10_15_113019) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "reference"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["decidim_component_id"], name: "index_decidim_budgets_projects_on_decidim_component_id"
     t.index ["decidim_scope_id"], name: "index_decidim_budgets_projects_on_decidim_scope_id"
   end
@@ -345,6 +370,7 @@ ActiveRecord::Schema.define(version: 2020_10_15_113019) do
     t.integer "decidim_participatory_space_id"
     t.string "decidim_participatory_space_type"
     t.integer "weight", default: 0, null: false
+    t.string "color"
     t.index ["decidim_participatory_space_id", "decidim_participatory_space_type"], name: "index_decidim_categories_on_decidim_participatory_space"
     t.index ["parent_id"], name: "index_decidim_categories_on_parent_id"
   end
@@ -573,6 +599,17 @@ ActiveRecord::Schema.define(version: 2020_10_15_113019) do
     t.index ["decidim_user_group_id"], name: "index_decidim_endorsements_on_decidim_user_group_id"
     t.index ["resource_type", "resource_id", "decidim_author_type", "decidim_author_id", "decidim_user_group_id"], name: "idx_endorsements_rsrcs_and_authors", unique: true
     t.index ["resource_type", "resource_id"], name: "index_decidim_endorsements_on_resource_type_and_resource_id"
+  end
+
+  create_table "decidim_favorites_favorites", force: :cascade do |t|
+    t.bigint "decidim_user_id", null: false
+    t.string "decidim_favoritable_type"
+    t.bigint "decidim_favoritable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_favoritable_id", "decidim_favoritable_type"], name: "index_on_favoritable"
+    t.index ["decidim_user_id", "decidim_favoritable_id", "decidim_favoritable_type"], name: "index_uniq_on_favorites_user_and_favoritable", unique: true
+    t.index ["decidim_user_id"], name: "index_decidim_favorites_favorites_on_decidim_user_id"
   end
 
   create_table "decidim_follows", force: :cascade do |t|
@@ -1157,6 +1194,84 @@ ActiveRecord::Schema.define(version: 2020_10_15_113019) do
     t.index ["privatable_to_type", "privatable_to_id"], name: "space_privatable_to_privatable_id"
   end
 
+  create_table "decidim_plans_plan_collaborator_requests", force: :cascade do |t|
+    t.bigint "decidim_plan_id", null: false
+    t.bigint "decidim_user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_plan_id"], name: "index_plan_collab_requests_on_decidim_plans_plan_id"
+    t.index ["decidim_user_id"], name: "index_plan_collab_requests_on_decidim_user_id"
+  end
+
+  create_table "decidim_plans_plan_contents", force: :cascade do |t|
+    t.jsonb "body", default: {}
+    t.bigint "decidim_user_id"
+    t.bigint "decidim_plan_id"
+    t.bigint "decidim_section_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_plan_id"], name: "index_decidim_plans_plan_contents_on_decidim_plan_id"
+    t.index ["decidim_section_id"], name: "index_decidim_plans_contents_section_id"
+    t.index ["decidim_user_id"], name: "index_decidim_plans_plan_contents_on_decidim_user_id"
+  end
+
+  create_table "decidim_plans_plan_taggings", force: :cascade do |t|
+    t.datetime "created_at"
+    t.bigint "decidim_plans_tag_id"
+    t.bigint "decidim_plan_id"
+    t.index ["decidim_plan_id"], name: "index_decidim_plans_plan_taggings_on_decidim_plan_id"
+    t.index ["decidim_plans_tag_id"], name: "index_decidim_plans_plan_taggings_on_decidim_plans_tag_id"
+  end
+
+  create_table "decidim_plans_plans", force: :cascade do |t|
+    t.jsonb "title"
+    t.integer "position"
+    t.string "state"
+    t.jsonb "answer"
+    t.datetime "answered_at"
+    t.integer "coauthorships_count", default: 0, null: false
+    t.integer "integer", default: 0, null: false
+    t.datetime "published_at"
+    t.bigint "decidim_component_id", null: false
+    t.bigint "decidim_category_id"
+    t.bigint "decidim_scope_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "update_token"
+    t.datetime "closed_at"
+    t.index ["answered_at"], name: "index_decidim_plans_plans_on_answered_at"
+    t.index ["closed_at"], name: "index_decidim_plans_plans_on_closed_at"
+    t.index ["decidim_category_id"], name: "index_decidim_plans_plans_on_decidim_category_id"
+    t.index ["decidim_component_id"], name: "index_decidim_plans_plans_on_decidim_component_id"
+    t.index ["decidim_scope_id"], name: "index_decidim_plans_plans_on_decidim_scope_id"
+    t.index ["published_at"], name: "index_decidim_plans_plans_on_published_at"
+    t.index ["state"], name: "index_decidim_plans_plans_on_state"
+  end
+
+  create_table "decidim_plans_sections", force: :cascade do |t|
+    t.integer "position"
+    t.jsonb "body"
+    t.bigint "decidim_component_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.jsonb "help"
+    t.boolean "mandatory"
+    t.string "section_type"
+    t.jsonb "settings", default: {}
+    t.jsonb "information_label"
+    t.jsonb "information"
+    t.index ["decidim_component_id"], name: "index_decidim_plans_sections_on_decidim_component_id"
+    t.index ["position"], name: "index_decidim_plans_sections_on_position"
+  end
+
+  create_table "decidim_plans_tags", force: :cascade do |t|
+    t.jsonb "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "decidim_organization_id", null: false
+    t.index ["decidim_organization_id"], name: "index_decidim_plans_tags_on_decidim_organization_id"
+  end
+
   create_table "decidim_proposals_collaborative_draft_collaborator_requests", force: :cascade do |t|
     t.bigint "decidim_proposals_collaborative_draft_id", null: false
     t.bigint "decidim_user_id", null: false
@@ -1592,6 +1707,15 @@ ActiveRecord::Schema.define(version: 2020_10_15_113019) do
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
   end
 
+  create_table "version_associations", force: :cascade do |t|
+    t.integer "version_id"
+    t.string "foreign_key_name", null: false
+    t.integer "foreign_key_id"
+    t.string "foreign_type", null: false
+    t.index ["foreign_key_name", "foreign_key_id", "foreign_type"], name: "index_version_associations_on_foreign_key"
+    t.index ["version_id"], name: "index_version_associations_on_version_id"
+  end
+
   create_table "versions", force: :cascade do |t|
     t.string "item_type", null: false
     t.integer "item_id", null: false
@@ -1600,8 +1724,11 @@ ActiveRecord::Schema.define(version: 2020_10_15_113019) do
     t.jsonb "object"
     t.datetime "created_at"
     t.text "object_changes"
+    t.integer "transaction_id"
+    t.jsonb "comment"
     t.index ["item_id", "item_type"], name: "index_versions_on_item_id_and_item_type"
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+    t.index ["transaction_id"], name: "index_versions_on_transaction_id"
   end
 
   add_foreign_key "decidim_area_types", "decidim_organizations"
@@ -1624,6 +1751,7 @@ ActiveRecord::Schema.define(version: 2020_10_15_113019) do
   add_foreign_key "decidim_participatory_process_steps", "decidim_participatory_processes"
   add_foreign_key "decidim_participatory_processes", "decidim_organizations"
   add_foreign_key "decidim_participatory_processes", "decidim_scope_types"
+  add_foreign_key "decidim_plans_tags", "decidim_organizations"
   add_foreign_key "decidim_scope_types", "decidim_organizations"
   add_foreign_key "decidim_scopes", "decidim_organizations"
   add_foreign_key "decidim_scopes", "decidim_scope_types", column: "scope_type_id"
