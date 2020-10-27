@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/decidim/decidim
-  revision: e15e006140f8aaeb4ac41b6d49b3bdf888f4e124
+  revision: e0cb3a1ee409820e806262d29cae2c3ca4bd2f57
   ref: release/0.22-stable
   specs:
     decidim (0.22.0)
@@ -732,7 +732,7 @@ GEM
       rspec-rails (< 5.0)
     rspec-core (3.9.3)
       rspec-support (~> 3.9.3)
-    rspec-expectations (3.9.2)
+    rspec-expectations (3.9.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-html-matchers (0.9.4)
@@ -751,7 +751,7 @@ GEM
       rspec-support (~> 3.9.0)
     rspec-retry (0.6.2)
       rspec-core (> 3.3)
-    rspec-support (3.9.3)
+    rspec-support (3.9.4)
     rspec_junit_formatter (0.3.0)
       rspec-core (>= 2, < 4, != 2.12.0)
     rubocop (0.71.0)
