@@ -228,6 +228,13 @@ GIT
       decidim-core (= 0.22.0)
 
 GIT
+  remote: https://github.com/digidemlab/decidim-module-analytics
+  revision: 08a7bf40216f7bb821b96a52371160e7041fa6dd
+  specs:
+    decidim-analytics (0.23.1)
+      decidim-core (>= 0.20.0)
+
+GIT
   remote: https://github.com/digidemlab/decidim-module-antivirus
   revision: 9135be185856bd63cba8b26ef92fab8a0a27279f
   specs:
@@ -874,6 +881,7 @@ DEPENDENCIES
   byebug (~> 11.0)
   decidim!
   decidim-accountability_simple!
+  decidim-analytics!
   decidim-antivirus!
   decidim-budgets_enhanced!
   decidim-consultations (= 0.22)
