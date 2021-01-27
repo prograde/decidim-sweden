@@ -35,7 +35,8 @@ gem "faker", "~> 1.9"
 
 gem "figaro"
 
-gem "sentry-raven"
+gem "sentry-rails"
+gem "sentry-sidekiq"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
