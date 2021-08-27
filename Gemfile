@@ -11,7 +11,7 @@ gem "decidim-consultations", DECIDIM_VERSION
 
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "master"
 #gem "decidim-access_requests", git: "https://github.com/mainio/decidim-module-access_requests"
-gem "decidim-navbar_links", git: "https://github.com/digidemlab/decidim-module-navbar_links", ref: "master"
+gem "decidim-navbar_links", git: "https://github.com/OpenSourcePolitics/decidim-module-navbar_links", branch: "release/0.24-stable"
 gem "decidim-socio_demographic_authorization_handler", git: "https://github.com/digidemlab/decidim-module-socio_demographic_authorization_handler", branch: "just-age-and-gender"
 #gem "decidim-jitsi_meetings", git: "https://github.com/digidemlab/decidim-module-online-meetings"
 gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome", branch: "master"
@@ -59,5 +59,5 @@ group :production do
   gem "sidekiq"
   gem "sidekiq-scheduler"
   gem "sinatra"
-  gem "decidim-antivirus", git: "https://github.com/digidemlab/decidim-module-antivirus", branch: "master"
+  gem "decidim-antivirus", git: "https://github.com/mainio/decidim-module-antivirus", branch: "master"
 end
