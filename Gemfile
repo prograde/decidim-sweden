@@ -12,6 +12,7 @@ gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "release/0.25-stable"
 gem "decidim-socio_demographic_authorization_handler", git: "https://github.com/digidemlab/decidim-module-socio_demographic_authorization_handler", branch: "just-age-and-gender"
 gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome", branch: "main"
+gem "decidim-simple_proposal", git: "https://github.com/mainio/decidim-module-simple_proposal", branch: "release/0.25-stable"
 #gem "decidim-accountability_simple", git: "https://github.com/mainio/decidim-module-accountability_simple", branch: "develop"
 
 gem "decidim-analytics", git: "https://github.com/digidemlab/decidim-module-analytics"
