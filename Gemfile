@@ -49,7 +49,7 @@ end
 
 group :production do
   gem "passenger"
-  gem "sidekiq"
+  gem "sidekiq", "~> 6.5.8"
   gem "sidekiq-scheduler"
   gem "sidekiq-failures"
   gem "sinatra"
