@@ -29,10 +29,6 @@ gem "faker", "~> 2.14"
 
 gem "figaro"
 
-gem "sentry-ruby"
-gem "sentry-rails"
-gem "sentry-sidekiq"
-
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
