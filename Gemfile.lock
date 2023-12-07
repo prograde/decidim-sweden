@@ -1,14 +1,4 @@
 GIT
-  remote: https://github.com/decidim-ice/decidim-module-decidim_awesome
-  revision: 650ada744dd639870c4ea7c196d735265e30e5dd
-  branch: main
-  specs:
-    decidim-decidim_awesome (0.9.3)
-      decidim-admin (>= 0.26.0, < 0.28)
-      decidim-core (>= 0.26.0, < 0.28)
-      sassc (~> 2.3)
-
-GIT
   remote: https://github.com/decidim/decidim
   revision: 8702c245084a22a88c3ee17c4ae1b2a97f0e2c34
   branch: release/0.26-stable
@@ -395,6 +385,10 @@ GEM
     db-query-matchers (0.10.0)
       activesupport (>= 4.0, < 7)
       rspec (~> 3.0)
+    decidim-decidim_awesome (0.9.3)
+      decidim-admin (>= 0.26.0, < 0.28)
+      decidim-core (>= 0.26.0, < 0.28)
+      sassc (~> 2.3)
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
@@ -896,7 +890,7 @@ DEPENDENCIES
   decidim-antivirus!
   decidim-budgets_paper_ballots!
   decidim-consultations!
-  decidim-decidim_awesome!
+  decidim-decidim_awesome (= 0.9.3)
   decidim-dev!
   decidim-faceless!
   decidim-simple_proposal!
