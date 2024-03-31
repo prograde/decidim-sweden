@@ -1,15 +1,4 @@
 GIT
-  remote: https://github.com/decidim-ice/decidim-module-decidim_awesome
-  revision: 7b356fe370655eca7661df3178ee0a76b7db50be
-  branch: develop
-  specs:
-    decidim-decidim_awesome (0.11.0)
-      decidim-admin (>= 0.28.0, < 0.29)
-      decidim-core (>= 0.28.0, < 0.29)
-      deface (>= 1.5)
-      sassc (~> 2.3)
-
-GIT
   remote: https://github.com/decidim/decidim
   revision: a25beaa73e36a55fba78b9236ebc09c572364a21
   branch: release/0.28-stable
@@ -372,12 +361,6 @@ GEM
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
-    deface (1.9.0)
-      actionview (>= 5.2)
-      nokogiri (>= 1.6)
-      polyglot
-      railties (>= 5.2)
-      rainbow (>= 2.1.0)
     devise (4.9.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -610,7 +593,6 @@ GEM
     pg_search (2.3.6)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
-    polyglot (0.3.5)
     premailer (1.22.0)
       addressable
       css_parser (>= 1.12.0)
@@ -770,8 +752,6 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sassc (2.4.0)
-      ffi (~> 1.9)
     selenium-webdriver (4.17.0)
       base64 (~> 0.2)
       rexml (~> 3.2, >= 3.2.5)
@@ -889,7 +869,6 @@ DEPENDENCIES
   decidim-analytics!
   decidim-antivirus!
   decidim-budgets_paper_ballots!
-  decidim-decidim_awesome!
   decidim-dev!
   decidim-faceless!
   decidim-socio_demographic_authorization_handler!
@@ -913,4 +892,4 @@ RUBY VERSION
    ruby 3.1.1p18
 
 BUNDLED WITH
-   2.3.24
+   2.3.7
